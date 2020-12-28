@@ -1,0 +1,1 @@
+list = [['com.desaysv.launcher', ['SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1']]]

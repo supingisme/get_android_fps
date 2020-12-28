@@ -1,0 +1,9 @@
+start time,end time,FPS,frames,Time(S),max time(ms),waiting time(S),wait times,A,B,C,D,score,TX,app,Surface
+3369.887398,3370.953728,10.3,11,1.066,97.036,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"
+3370.953728,3372.020075,10.3,11,1.066,97.058,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"
+3372.020075,3373.086393,10.3,11,1.066,97.031,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"
+3373.086393,3374.152761,10.3,11,1.066,97.113,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"
+3374.152761,3375.219216,10.3,11,1.066,97.016,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"
+3375.219216,3376.285537,10.3,11,1.066,97.093,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"
+3376.285537,3377.351871,10.3,11,1.066,97.045,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"
+3377.351871,3378.418179,10.3,11,1.066,97.001,0,0,0,11,0,0,43.3,0,com.desaysv.launcher,"SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1"

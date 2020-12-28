@@ -1,0 +1,17 @@
+var min=3369.887;
+var max=3378.418;
+var start_time = [3369.887, 3370.954, 3372.02, 3373.086, 3374.153, 3375.219, 3376.286, 3377.352];
+var end_time = [3370.954, 3372.02, 3373.086, 3374.153, 3375.219, 3376.286, 3377.352, 3378.418];
+var FPS = [10.3, 10.3, 10.3, 10.3, 10.3, 10.3, 10.3, 10.3];
+var score = [43.3, 43.3, 43.3, 43.3, 43.3, 43.3, 43.3, 43.3];
+var frames = [11, 11, 11, 11, 11, 11, 11, 11];
+var Time = [1.066, 1.066, 1.066, 1.066, 1.066, 1.066, 1.066, 1.066];
+var max_time = [97.036, 97.058, 97.031, 97.113, 97.016, 97.093, 97.045, 97.001];
+var waiting_time = [0, 0, 0, 0, 0, 0, 0, 0];
+var wait_times = [0, 0, 0, 0, 0, 0, 0, 0];
+var A = [0, 0, 0, 0, 0, 0, 0, 0];
+var B = [11, 11, 11, 11, 11, 11, 11, 11];
+var C = [0, 0, 0, 0, 0, 0, 0, 0];
+var D = [0, 0, 0, 0, 0, 0, 0, 0];
+var TX = [0, 0, 0, 0, 0, 0, 0, 0];
+var Surface = ['SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1', 'SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1', 'SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1', 'SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1', 'SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1', 'SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1', 'SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1', 'SurfaceView - com.desaysv.launcher/com.desaysv.launcher.activity.LauncherActivity#1'];
