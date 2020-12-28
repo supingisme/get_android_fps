@@ -98,8 +98,10 @@ fi
 local sync=`dumpsys SurfaceFlinger --latency|$bb awk 'NR==1{r=$1/1000000;if(r<0)r=$1/1000;print r}'`
 #当前选中的activity
 local hasFocus=`dumpsys input|grep "hasFocus=true"|$bb awk '{print substr($4,1,length($4)-3)}'`
+echo $hasFocus
 #提取当前显示activity的app
 local app=`echo $hasFocus|$bb awk -F "/" '{print $1}'`
+echo $app
 #开始输出systrace log: 1M 循环buffer 的gfx信息
 echo "atrace gfx -b 1024 -c --async_start"
 atrace gfx -b 1024 -c --async_start
@@ -121,7 +123,11 @@ $bb awk -F "|" \
 			if(NF==4||$3=="postFramebuffer"){ \
 				if($3~/VSYNC-sf|VSYNC-app|VSYNC-sf-app/){ \
 					gsub(/.*.) |: tracing_mark_write: C/,"",$1); \
+                    #print "test2  " $3
 					split($1,T," "); \
+                    #print "test3  " $1
+                    #print T[4]
+                    #print "test4  " $f
 					if(f==""){ \
 						f=T[3]; \
 						logF=1; \
@@ -157,7 +163,8 @@ $bb awk -F "|" \
 							}else{ \
 								d=0 \
 							}; \
-							wt=(T[3]-V[p])*1000; \
+							wt=(T[4]-V[p])*1000; \
+                            #printf("test5 %d %f %f\n", wt, T[4], V[p])
 							if(wt<500){ \
 								if(d==1){ \
 									if(logD==2){ \
@@ -193,14 +200,17 @@ $bb awk -F "|" \
 								} \
 							}; \
 							if(logF==1){ \
+                                #print "test50"
 								if(d==1)D[p]=D[p]+1; \
-								if(b[p]=="")b[p]=T[3]; \
-								V[p]=T[3]; \
-								if(T[3]-f>=delay){ \
+								if(b[p]=="")b[p]=T[4]; \
+								V[p]=T[4]; \
+								if(T[4]-f>=delay){ \
 									if(length(N)>0){ \
 										for(i in N){ \
 											if(N[i]>fames){ \
+                                               #print "test60" 
 												fps=sprintf("%.1f",N[i]*1000/Time[i]); \
+                                                #print $fps
 												if(fps>=target){ \
 													fps=int(fps); \
 													g=1 \
@@ -223,12 +233,12 @@ $bb awk -F "|" \
 											} \
 										} \
 									}; \
-									f=T[3]; \
+									f=T[4]; \
 								} \
 							} \
 						};
 					}; \
-					VSYNC=T[3];                 
+					VSYNC=T[4];                 
 					state=1; \
 					TX=0; \
 					post=0; \
@@ -257,6 +267,7 @@ $bb awk -F "|" \
 										} \
 									} \
 								}; \
+                                #print "test80" 
 								if($3~/SurfaceTexture/)sv="SurfaceTexture";else	sv=$3; \
 							} \
 						} \
@@ -267,6 +278,7 @@ $bb awk -F "|" \
 		if(length(N)>0){ \
 			for(i in N){ \
 				if(N[i]>0){ \
+                    #print "test90" 
 					fps=sprintf("%.1f",N[i]*1000/Time[i]); \
 					if(fps>=target){ \
 						fps=int(fps); \
@@ -276,6 +288,7 @@ $bb awk -F "|" \
 					}; \
 					if(kpi<M[i])h=kpi/M[i];else h=1; \
 					ss=sprintf("%.2f",g*60+h*20+(1-A[i]/N[i])*10+(1-B[i]/N[i])*7+(1-C[i]/N[i])*3); \
+                    print "test100!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  " 
 					print b[i],V[i],fps+0,N[i],sprintf("%.3f",Time[i]/1000)+0,M[i],sprintf("%.3f",StopT[i]/1000)+0,Stop[i]+0,A[i]+0,B[i]+0,C[i]+0,D[i]+0,ss+0,i>>csv \
 				} \
 			} \
